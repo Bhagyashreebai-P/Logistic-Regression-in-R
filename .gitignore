@@ -1,0 +1,16 @@
+Traindata=read.csv("C:\\Users\\baibhagy\\Downloads\\train_binary.csv")
+Traindata
+
+#test_data
+Testdata=read.csv("C:\\Users\\baibhagy\\Downloads\\test_binary.csv")
+Testdata
+
+# Logistic regression
+names(Traindata)
+X_Train=Traindata[1:3]
+Y_Train=Traindata[4]
+logistic=glm(admit~.,data=Traindata,family=binomial)
+summary(logistic)
+
+#Predict test values
+output=predict(logistic,Testdata,type="response")
